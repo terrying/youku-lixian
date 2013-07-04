@@ -48,7 +48,7 @@ def parse_playlist(url):
 	if re.match(r'http://www.tudou.com/albumcover/', url):
 		atitle = r1(r"title\s*:\s*'([^']+)'", html)
 	elif re.match(r'http://www.tudou.com/playlist/p/', url):
-		atitle = r1(r'atitle\s*=\s*"([^"]+)"', html)
+		atitle = r1(r"atitle\s*=\s*'([^']+)'", html)
 	else:
 		raise NotImplementedError(url)
 	assert aid
